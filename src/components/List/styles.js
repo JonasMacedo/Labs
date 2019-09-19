@@ -7,13 +7,14 @@ export const Container = styled.div`
 
 
     & + div {
-        border-left: 1px solid rgba(0,0,0, 0.05);
+        border-left: 1px solid rgba(0,0,0, 0.5);
     }
 
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        hight: 42px;
 
         h2{
             font-weight: 500;
