@@ -14,6 +14,7 @@ export default function List() {
         <button type="button">
           <MdAdd size={24} color="#fff"/>
         </button>
+      </header>
         <ul>
           <Card/>
           <Card/>
@@ -21,7 +22,6 @@ export default function List() {
           <Card/>
           <Card/>
         </ul>
-      </header>
     </Container>
   );
 }

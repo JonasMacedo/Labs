@@ -14,3 +14,16 @@ as proprieades do icone. A tag do icone pode ir dentro de outra tag se necessari
 
 Para utiliza-lo bem é bom ler sua documentação, para saber como utilizar os diversos 
 icones fornecidos pela biblioteca
+
+------------------------//////------------------------//////------------------------//////------------------------
+
+Hack na estilização.
+
+Para palicar um efeito em um item seguido por outro item, usa-se o hack.
+
+- & + div{
+
+}
+
+Neste hack sera aplicado os efeito css, mas apenas os elementos seguindos pelo segundo 
+elemento recebera o efeitos.
