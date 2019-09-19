@@ -6,6 +6,8 @@ export default function Card() {
   return (
     <Container>
 
+      
     </Container>
   );
 }
+
