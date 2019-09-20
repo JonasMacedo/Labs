@@ -48,4 +48,42 @@ da biblioteca.
 
 - import {useDrag} from 'react-dnd';
 
-Feito o import, sera possivel usar suas Hooks
+Feito o import, sera possivel usar suas Hooks, que irao possibilitar a movimentação de componentes.
+
+- useDrag({
+    item: {type: 'CARD'},
+    collect: monitor =>({
+      isDragging: monitor.isDragging(),
+    })
+  });
+
+- useDrag : aceita um objeto de especificado para movimentação. 
+
+-"item: {type:'objeto'}" é necessário especificar o tipo de item que estara sendo arrastado. 
+
+- collect: define uma função de 'coletor' essa é basicamente uma maneira de coletar as informações 
+do estado do componente que será movido, em informações úteis para seus componentes.
+
+Para receber as informações coletadas pela hook "useDrag" a maneira mais simples é criando uma variavel e 
+usando a desestruturação, para receber apenas as informações desejadas da hook.
+
+- const [{props}, ref] = useDrag({
+    item: {type: 'CARD'},
+    collect: monitor =>({
+      isDragging: monitor.isDragging(),
+    })
+});
+
+- props: contém as propriedades que você coletou com a hook "useDrag" de arrastar e soltar.
+- ref: Isso é usado para anexar seus elementos da DOM ao react-dnd.
+
+No conteiner do objeto que sera necessario referenciar para que 'useDrag' colete as informações.
+
+- <Container ref={ref}>
+      <header>
+      </header>
+      <body>
+      </body>      
+  </Container>
+
+------------------------//////------------------------//////------------------------//////------------------------
