@@ -9,7 +9,7 @@ const lists = loadLists();
 export default function Board() {
   return (
     <Container>
-      {lists.map(list=><List key={list.title} data={list} />)}
+      {lists.map(list=> <List key={list.title} data={list} />)}
     </Container>
   );
 }
