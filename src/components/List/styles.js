@@ -1,24 +1,25 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    
     padding: 0 15px;
     height: 100%;
     flex: 0 0 320px;
 
 
-    & + div {
+    & + div{
         border-left: 1px solid rgba(0,0,0, 0.5);
     }
 
-    header {
+    header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        hight: 42px;
+        height: 42px;
 
         h2{
             font-weight: 500;
-            font-size: 16px
+            font-size: 16px;
             padding: 0 10px;
         }
         
@@ -32,4 +33,7 @@ export const Container = styled.div`
         }
     }
 
+    ul{
+        margin-top: 30px;
+    }
 `;
