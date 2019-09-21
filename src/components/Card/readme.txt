@@ -75,7 +75,8 @@ usando a desestruturação, para receber apenas as informações desejadas da ho
 });
 
 - props: contém as propriedades que você coletou com a hook "useDrag" de arrastar e soltar.
-- ref: Isso é usado para anexar seus elementos da DOM ao react-dnd.
+- ref: Isso é usado para anexar seus elementos da DOM ao react-dnd, agindo como uma chamada 
+de função para a hook "useDrag".
 
 No conteiner do objeto que sera necessario referenciar para que 'useDrag' colete as informações.
 
@@ -87,3 +88,16 @@ No conteiner do objeto que sera necessario referenciar para que 'useDrag' colete
   </Container>
 
 ------------------------//////------------------------//////------------------------//////------------------------
+
+Multiplas Referencias no React.
+
+O react não permite passar mais do que 1 referencia, por conteiner no parametro 'ref' tambem não 
+permite passar um 'array' de referencias.
+
+- <Container ref={referencia} >
+
+Para contanar esta limitação, o react tem uma hook 'useRef'. 
+
+- import React,{ useRef }from 'react';
+
+Esta hook basicamente permite criar uma referencia.
