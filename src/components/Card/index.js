@@ -3,14 +3,14 @@ import {useDrag, useDrop} from 'react-dnd';
 
 import { Container, Label } from './style';
 
-export default function Card({data}) {
+export default function Card({data,index}) {
 
   //criando uma referencia com a Hook.
   const ref = useRef();
 
   //Ira monitorar as movimentações dos cards.
   const [{isDragging},dragRef] = useDrag({
-    item: {type: 'CARD', id: data.id},
+    item: {type: 'CARD', index},
     collect: monitor =>({
       isDragging: monitor.isDragging(),
     })
@@ -20,7 +20,8 @@ export default function Card({data}) {
   const[,dropRef]=useDrop({
     accept: 'CARD',
     hover(item,monitor){
-      console.log(item.id);
+      console.log("movedCard: ",item.index);
+      console.log('targetCard: ',index);
     }
   });
 
