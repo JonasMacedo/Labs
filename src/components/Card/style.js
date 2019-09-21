@@ -5,7 +5,6 @@ export const Container = styled.div`
     position: relative;
     background: #fff;
     border-radius: 7px;
-    margin-top: 10px;
     margin-bottom: 10px;
     padding: 15px;
     box-shadow: 0 1px 4px 0 rgba(192,208,230, 0.8);
@@ -14,7 +13,7 @@ export const Container = styled.div`
 
     header{
         position: absolute;
-        top: -14px;
+        top: -22px;
         left: 15px;
     }
 
