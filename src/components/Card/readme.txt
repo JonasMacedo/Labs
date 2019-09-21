@@ -87,6 +87,8 @@ No conteiner do objeto que sera necessario referenciar para que 'useDrag' colete
       </body>      
   </Container>
 
+
+Obs.: Para mais informações leia a documentação do DND do react.
 ------------------------//////------------------------//////------------------------//////------------------------
 
 Multiplas Referencias no React.

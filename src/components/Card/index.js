@@ -20,8 +20,33 @@ export default function Card({data,index}) {
   const[,dropRef]=useDrop({
     accept: 'CARD',
     hover(item,monitor){
-      console.log("movedCard: ",item.index);
-      console.log('targetCard: ',index);
+      const draggedIndex = item.index;
+      const targetIndex = index;
+
+      //Verifica se esta em posição diferente.
+      if(draggedIndex === targetIndex){
+        return; 
+      }
+
+      //obtendo largura do objeto.
+      const targetSize = ref.current.getBoundingClientRect();
+      const targetCenter = (targetSize.bottom - targetSize.top)/2;
+      
+      //Obtem o deslocamento do objeto em tela.
+      const draggedOffset = monitor.getClientOffset();
+      const draggedTop = draggedOffset.y - targetSize.top;
+
+      //Evita movimentação de cards desnecessarias.
+      if(draggedIndex < targetIndex && draggedTop < targetCenter){
+        return;
+      }      
+
+      if(draggedIndex > targetIndex && draggedTop > targetCenter){
+        return
+      }
+
+      
+
     }
   });
 
