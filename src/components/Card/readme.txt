@@ -103,3 +103,17 @@ Para contanar esta limitação, o react tem uma hook 'useRef'.
 - import React,{ useRef }from 'react';
 
 Esta hook basicamente permite criar uma referencia.
+
+------------------------//////------------------------//////------------------------//////------------------------
+
+
+  Usando context em outro componente.
+
+Uma vez criado o context, para utiliza-lo bastar realizar o import 
+
+- import BoardContext from '../Board/context';
+
+Feito o import corretamente, crie uma variavel  e utilize a desestruturação se necessario, para 
+recolher as informações ou metodos necessarioas do contexto.
+
+- const {move} = useContext(BoardContext);

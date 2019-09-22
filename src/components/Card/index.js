@@ -1,16 +1,21 @@
-import React,{ useRef}from 'react';
+import React,{ useRef, useContext }from 'react';
 import {useDrag, useDrop} from 'react-dnd';
+
+import BoardContext from '../Board/context';//Importando context.
 
 import { Container, Label } from './style';
 
-export default function Card({data,index}) {
+export default function Card({data, index, listIndex}) {
 
   //criando uma referencia com a Hook.
   const ref = useRef();
 
+  //Usando context.
+  const {move} = useContext(BoardContext);
+
   //Ira monitorar as movimentações dos cards.
   const [{isDragging},dragRef] = useDrag({
-    item: {type: 'CARD', index},
+    item: {type: 'CARD', index, listIndex},
     collect: monitor =>({
       isDragging: monitor.isDragging(),
     })
@@ -20,6 +25,10 @@ export default function Card({data,index}) {
   const[,dropRef]=useDrop({
     accept: 'CARD',
     hover(item,monitor){
+
+      const draggedListIndex = item.listIndex;
+      //const targetListIndex = listIndex;
+
       const draggedIndex = item.index;
       const targetIndex = index;
 
@@ -45,7 +54,7 @@ export default function Card({data,index}) {
         return
       }
 
-      
+      move(draggedListIndex, draggedIndex, targetIndex);      
 
     }
   });
