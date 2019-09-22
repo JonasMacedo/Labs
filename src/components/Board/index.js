@@ -14,14 +14,14 @@ export default function Board() {
   
   const[lists,setList] = useState(data);
 
-  function move(fromList, from, to){
-    //console.log('CardDrag: ',from,'CardTarget: ',to);
+  function move(fromList, toList, from, to){
+    //console.log('draggedCard: ',from,'cardTarget: ',to);
 
     setList(produce(lists, draft => {
       const dragged = draft[fromList].cards[from];
       
       draft[fromList].cards.splice(from, 1);//Removendo elemento da lista.
-      draft[fromList].cards.splice(to, 0, dragged);//Colocando em uma nova posição.
+      draft[toList].cards.splice(to, 0, dragged);//Colocando em uma nova posição.
     }))
 
   }
